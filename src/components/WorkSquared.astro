@@ -1,0 +1,63 @@
+---
+---
+
+<div class="container">
+  <main>
+    <h1>WorkSquared</h1>
+    <footer>
+      <a href="https://sociotechnica.org" target="_blank" rel="noopener noreferrer">
+        A SocioTechnica Exploration
+      </a>
+    </footer>
+  </main>
+</div>
+
+<style>
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    text-align: center;
+    padding: 1rem;
+  }
+
+  main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+  }
+
+  h1 {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+  }
+
+  footer {
+    margin-top: 5rem;
+    font-size: 0.9rem;
+  }
+
+  a {
+    color: #666;
+    text-decoration: none;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 1px;
+    transition: color 0.2s, border-color 0.2s;
+  }
+
+  a:hover {
+    color: #000;
+    border-color: #999;
+  }
+
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 3rem;
+    }
+  }
+</style>
