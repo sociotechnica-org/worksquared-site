@@ -23,7 +23,13 @@ This site serves as the homepage for WorkSquared, featuring minimal content with
 
 ## Deployment
 
-This site is configured to deploy to Cloudflare Pages.
+This site is deployed on Cloudflare Pages with the following configuration:
+
+- The domain was purchased through Namecheap
+- Deployments are automatically triggered from the `main` branch on GitHub
+- Each new push to the `main` branch deploys the site to production
+- Build command: `npm run build`
+- Build output directory: `dist`
 
 ## Links
 
