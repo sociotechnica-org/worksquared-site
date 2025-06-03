@@ -1,10 +1,10 @@
 # WorkSquared.ai
 
-A simple landing page for WorkSquared.ai, built with Astro and React.
+A simple landing page for Work Squared, built with Astro and React.
 
 ## About
 
-This site serves as the homepage for WorkSquared, featuring minimal content with a link to SocioTechnica.
+This site serves as the homepage for Work Squared, featuring minimal content with a link to SocioTechnica.
 
 ## Tech Stack
 
