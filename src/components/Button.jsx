@@ -2,8 +2,8 @@ import React from 'react';
 
 export default function Button({ children, href, className = '' }) {
   return (
-    <a 
-      href={href} 
+    <a
+      href={href}
       className={`button ${className}`}
       target={href.startsWith('http') ? '_blank' : undefined}
       rel={href.startsWith('http') ? 'noopener noreferrer' : undefined}
