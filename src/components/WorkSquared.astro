@@ -4,24 +4,29 @@
 
 <div class="container">
   <main>
+    <img id="logo" src="/worksquared-logo.png" alt="Work Squared" />
     <h1>Work Squared</h1>
 
     <form
       action="https://buttondown.com/api/emails/embed-subscribe/sociotechnica"
       method="post"
       target="popupwindow"
-      onsubmit="window.open('https://buttondown.com/sociotechnica', 'popupwindow')"
+      onsubmit="handleFormSubmit(event)"
       class="embeddable-buttondown-form"
     >
-      <label for="bd-email">Get updates</label>
+      <label for="bd-email">Subscribe for updates</label>
+      <span class="small">At most once a month.</span>
       <input type="email" name="email" id="bd-email" />
 
-      <input type="submit" value="Subscribe" />
-      <p>
-        <a href="https://buttondown.com/refer/sociotechnica" target="_blank"
-          >Powered by Buttondown.</a
-        >
-      </p>
+      <input
+        type="submit"
+        value="Subscribe"
+        id="subscribe-btn"
+        placeholder="Enter your email"
+      />
+      <div id="success-message" style="display: none;">
+        Thanks! Check your email.
+      </div>
     </form>
     <footer>
       <a
@@ -55,9 +60,15 @@
     flex: 1;
   }
 
+  #logo {
+    width: 111px;
+    height: 111px;
+  }
+
   h1 {
     font-size: 4rem;
-    margin-bottom: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 5rem;
     font-weight: 600;
   }
 
@@ -81,9 +92,70 @@
     border-color: #999;
   }
 
+  label {
+    display: block;
+    font-size: 1.2rem;
+    font-weight: 600;
+  }
+
+  span.small {
+    margin-top: 0.25rem;
+    display: block;
+    font-size: 0.9rem;
+    color: #999;
+    font-style: italic;
+  }
+
+  input[type='email'] {
+    margin-top: 0.5rem;
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 0.25rem;
+    font-size: 1rem;
+    width: 100%;
+    max-width: 200px;
+    text-align: center;
+  }
+
+  #subscribe-btn {
+    margin-top: 0.5rem;
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 0.25rem;
+    font-size: 1rem;
+    cursor: pointer;
+    background-color: #fafafa;
+    border-color: #ddd;
+  }
+  #subscribe-btn:hover {
+    background-color: #eee;
+    border-color: #dedede;
+  }
+
+  #success-message {
+    margin-top: 0.5rem;
+    color: #000;
+  }
+
   @media (max-width: 768px) {
     h1 {
       font-size: 3rem;
     }
   }
 </style>
+
+<script is:inline>
+  function handleFormSubmit(event) {
+    const submitBtn = document.getElementById('subscribe-btn');
+    const successMessage = document.getElementById('success-message');
+
+    if (!submitBtn || !successMessage) return;
+
+    // Hide the submit button and show success message
+    submitBtn.style.display = 'none';
+    successMessage.style.display = 'block';
+
+    // Allow the form to submit normally to the popup
+    return true;
+  }
+</script>
