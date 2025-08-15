@@ -1,5 +1,5 @@
 ---
-
+import GitHubIcon from './GitHubIcon.jsx';
 ---
 
 <div class="container">
@@ -30,6 +30,15 @@
       </div>
     </form>
     <footer>
+      <a
+        href="https://github.com/sociotechnica-org/work-squared"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="github-link"
+      >
+        <GitHubIcon size={20} client:load />
+        <span>View on GitHub</span>
+      </a>
       <a
         href="https://sociotechnica.org"
         target="_blank"
@@ -76,6 +85,10 @@
   footer {
     margin-top: 5rem;
     font-size: 0.9rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
   }
 
   a {
@@ -91,6 +104,19 @@
   a:hover {
     color: #000;
     border-color: #999;
+  }
+
+  .github-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 500;
+    border-bottom: none !important;
+  }
+
+  .github-link:hover {
+    color: #333;
+    border-bottom: none !important;
   }
 
   label {
@@ -146,6 +172,7 @@
 </style>
 
 <script is:inline>
+  // eslint-disable-next-line no-unused-vars
   function handleFormSubmit(event) {
     const submitBtn = document.getElementById('subscribe-btn');
     const successMessage = document.getElementById('success-message');
